@@ -15,6 +15,7 @@ jobs:
           username: ${{ secrets.ACTOR }}
           password: ${{ secrets.THE_TOKEN }}
       - name: Build the gologol-api Docker image
-        run: docker build . --tag ghcr.io/villenams/gologol-api-gcr:latest
-        run: docker run ghcr.io/villenams/gologol-api-gcr:latest
-        run: docker push ghcr.io/villenams/gologol-api-gcr:latest
+        run: |-
+          docker build . --tag ghcr.io/villenams/gologol-api-gcr:latest
+          docker run ghcr.io/villenams/gologol-api-gcr:latest
+          docker push ghcr.io/villenams/gologol-api-gcr:latest
